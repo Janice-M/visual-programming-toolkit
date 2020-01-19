@@ -26,3 +26,10 @@ function createBlock(name, value, contents){
         var input = block.querySelector('input');
         return input ? Number(input.value) : null;
     }
+    function blockUnits(block){
+        if (block.children.length > 1 &&
+            block.lastChild.nodeType === Node.TEXT_NODE &&
+            block.lastChild.textContent){
+            return block.lastChild.textContent.slice(1);
+        }
+    }
