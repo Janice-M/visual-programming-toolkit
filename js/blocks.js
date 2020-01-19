@@ -12,7 +12,7 @@ function createBlock(name, value, contents){
             return createBlock.apply(null, block);
         })));
     }else if (typeof contents === 'string'){
-        // Add units (degrees, etc.) specifier
+        // Add units (degrees, etc.) specifier of how these blockkks finna move
         item.appendChild(document.createTextNode(' ' + contents));
     }
     return item;
@@ -22,12 +22,12 @@ function blockContents(block){
     return container ? [].slice.call(container.children) : null;
 }
 
-    function blockValue(block){
-        var input = block.querySelector('input');
-        return input ? Number(input.value) : null;
-    }
-    function blockUnits(block){
-        if (block.children.length > 1 &&
+function blockValue(block){
+    var input = block.querySelector('input');
+    return input ? Number(input.value) : null;
+}
+function blockUnits(block){
+    if (block.children.length > 1 &&
             block.lastChild.nodeType === Node.TEXT_NODE &&
             block.lastChild.textContent){
             return block.lastChild.textContent.slice(1);
