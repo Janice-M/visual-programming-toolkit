@@ -43,10 +43,10 @@ function blockScript(block){
     }
     var contents = blockContents(block);
     var units = blockUnits(block);
-        if (contents){script.push(contents.map(blockScript));}
-        if (units){script.push(units);}
-        return script.filter(function(notNull){ return notNull !== null; });
-    }
+    if (contents){script.push(contents.map(blockScript));}
+    if (units){script.push(units);}
+    return script.filter(function(notNull){ return notNull !== null; });
+}
 
 function runBlocks(blocks){
     blocks.forEach(function(block){ trigger('run', block); });
