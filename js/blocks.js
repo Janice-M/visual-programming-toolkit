@@ -1,4 +1,6 @@
+
 function createBlock(name, value, contents){
+    //kids this is the beginning of creating the blocks
     var item = elem('div',
         {'class': 'block', draggable: true, 'data-name': name},
         [name]
@@ -12,7 +14,7 @@ function createBlock(name, value, contents){
             return createBlock.apply(null, block);
         })));
     }else if (typeof contents === 'string'){
-        // Add units (degrees, etc.) specifier of how these blockkks finna move
+        // specifier of how these blockkks finna move
         item.appendChild(document.createTextNode(' ' + contents));
     }
     return item;
@@ -28,11 +30,11 @@ function blockValue(block){
 }
 function blockUnits(block){
     if (block.children.length > 1 &&
-            block.lastChild.nodeType === Node.TEXT_NODE &&
-            block.lastChild.textContent){
-            return block.lastChild.textContent.slice(1);
-        }
+        block.lastChild.nodeType === Node.TEXT_NODE &&
+        block.lastChild.textContent){
+        return block.lastChild.textContent.slice(1);
     }
+}
     function blockScript(block){
         var script = [block.dataset.name];
         var value = blockValue(block);
