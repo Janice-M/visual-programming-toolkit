@@ -35,14 +35,14 @@ function blockUnits(block){
         return block.lastChild.textContent.slice(1);
     }
 }
-    function blockScript(block){
-        var script = [block.dataset.name];
-        var value = blockValue(block);
-        if (value !== null){
-            script.push(blockValue(block));
-        }
-        var contents = blockContents(block);
-        var units = blockUnits(block);
+function blockScript(block){
+    var script = [block.dataset.name];
+    var value = blockValue(block);
+    if (value !== null){
+        script.push(blockValue(block));
+    }
+    var contents = blockContents(block);
+    var units = blockUnits(block);
         if (contents){script.push(contents.map(blockScript));}
         if (units){script.push(units);}
         return script.filter(function(notNull){ return notNull !== null; });
