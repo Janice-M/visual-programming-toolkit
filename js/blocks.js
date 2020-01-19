@@ -17,3 +17,7 @@ function createBlock(name, value, contents){
     }
     return item;
 }
+function blockContents(block){
+    var container = block.querySelector('.container');
+    return container ? [].slice.call(container.children) : null;
+}
