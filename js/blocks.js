@@ -11,3 +11,9 @@ function createBlock(name, value, contents){
             elem('div', {'class': 'container'}, contents.map(function(block){
             return createBlock.apply(null, block);
         })));
+    }else if (typeof contents === 'string'){
+        // Add units (degrees, etc.) specifier
+        item.appendChild(document.createTextNode(' ' + contents));
+    }
+    return item;
+}
