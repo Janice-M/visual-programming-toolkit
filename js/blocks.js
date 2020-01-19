@@ -39,3 +39,9 @@ function createBlock(name, value, contents){
         if (value !== null){
             script.push(blockValue(block));
         }
+        var contents = blockContents(block);
+        var units = blockUnits(block);
+        if (contents){script.push(contents.map(blockScript));}
+        if (units){script.push(units);}
+        return script.filter(function(notNull){ return notNull !== null; });
+    }
