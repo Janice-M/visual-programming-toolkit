@@ -1,4 +1,5 @@
 console.log(69);
+console.log('monday');
 
 function createBlock(name, value, contents){
     //kids this is the beginning of creating the blocks
