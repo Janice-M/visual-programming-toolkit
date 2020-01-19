@@ -17,7 +17,12 @@ function createBlock(name, value, contents){
     }
     return item;
 }
-function blockContents(block){
-    var container = block.querySelector('.container');
-    return container ? [].slice.call(container.children) : null;
-}
+    function blockContents(block){
+        var container = block.querySelector('.container');
+        return container ? [].slice.call(container.children) : null;
+    }
+
+    function blockValue(block){
+        var input = block.querySelector('input');
+        return input ? Number(input.value) : null;
+    }
