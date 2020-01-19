@@ -1,3 +1,4 @@
+console.log(69);
 
 function createBlock(name, value, contents){
     //kids this is the beginning of creating the blocks
