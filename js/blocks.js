@@ -6,3 +6,8 @@ function createBlock(name, value, contents){
     if (value !== undefined && value !== null){
         item.appendChild(elem('input', {type: 'number', value: value}));
     }
+    if (Array.isArray(contents)){
+        item.appendChild(
+            elem('div', {'class': 'container'}, contents.map(function(block){
+            return createBlock.apply(null, block);
+        })));
