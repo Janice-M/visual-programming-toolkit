@@ -45,3 +45,7 @@ function createBlock(name, value, contents){
         if (units){script.push(units);}
         return script.filter(function(notNull){ return notNull !== null; });
     }
+
+function runBlocks(blocks){
+        blocks.forEach(function(block){ trigger('run', block); });
+    }
