@@ -33,3 +33,9 @@ function createBlock(name, value, contents){
             return block.lastChild.textContent.slice(1);
         }
     }
+    function blockScript(block){
+        var script = [block.dataset.name];
+        var value = blockValue(block);
+        if (value !== null){
+            script.push(blockValue(block));
+        }
