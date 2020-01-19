@@ -3,3 +3,6 @@ function createBlock(name, value, contents){
         {'class': 'block', draggable: true, 'data-name': name},
         [name]
     );
+    if (value !== undefined && value !== null){
+        item.appendChild(elem('input', {type: 'number', value: value}));
+    }
